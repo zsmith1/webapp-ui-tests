@@ -11,4 +11,3 @@ Feature: Navbar tabs
       | Projects   | /projects |
       | Skills     | /skills   |
       | Contact Me | /contact  |
-    
