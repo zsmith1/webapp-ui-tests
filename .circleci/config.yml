@@ -1,4 +1,10 @@
 version: 2.1
+
+workflows:
+  test_ui:
+    jobs:
+      - build_and_run
+
 jobs:
   build_and_run:
     docker:
