@@ -1,19 +1,8 @@
 version: 2.1
-
-workflows:
-  test_ui:
-    jobs:
-      - build_and_run:
-          context:
-            - dockerhub
-
 jobs:
   build_and_run:
     docker:
-      - image: cimg/3.12.1-browser
-        auth:
-          username: $USERNAME
-          password: $API_TOKEN
+      - image: cimg/3.12.1-browsers
     steps:
       - checkout
       - run:
