@@ -1,21 +1,21 @@
 version: 2.1
+
+workflows:
+  test_ui:
+    jobs:
+      - build_and_run:
+          context:
+            - dockerhub
+
 jobs:
-  build:
+  build_and_run:
     docker:
       - image: cimg/3.12.1-browser
+        auth:
+          username: $USERNAME
+          password: $API_TOKEN
     steps:
       - checkout
-      - run: mkdir test-reports
-      - run:
-          name: Download Selenium
-          command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
-      - run:
-          name: Start Selenium
-          command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
-          background: true
-      - run:
-          name: Install poetry
-          command: pip install poetry
       - run:
           name: Install dependencies
           command: poetry install
