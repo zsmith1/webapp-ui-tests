@@ -1,4 +1,3 @@
-import time
 from behave import given, when, then
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -17,7 +16,6 @@ def step_impl(context):
 
 @then('we are routed to /')
 def step_impl(context):
-    print(context.driver.current_url)
     assert context.driver.current_url == f'{WEBSITE_URL}/'
     
 @when('I click Skills')
@@ -26,7 +24,6 @@ def step_impl(context):
 
 @then('we are routed to /skills')
 def step_impl(context):
-    print(context.driver.current_url)
     assert context.driver.current_url == f'{WEBSITE_URL}/skills'
     
 @when('I click Projects')
@@ -35,7 +32,6 @@ def step_impl(context):
 
 @then('we are routed to /projects')
 def step_impl(context):
-    print(context.driver.current_url)
     assert context.driver.current_url == f'{WEBSITE_URL}/projects'
     
 @when('I click Contact Me')
@@ -44,5 +40,4 @@ def step_impl(context):
 
 @then('we are routed to /contact')
 def step_impl(context):
-    print(context.driver.current_url)
     assert context.driver.current_url == f'{WEBSITE_URL}/contact'
