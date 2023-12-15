@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build_and_run:
     docker:
-      - image: cimg/3.12.1-browsers
+      - image: cimg/python:3.12.1-browsers
     steps:
       - checkout
       - run:
