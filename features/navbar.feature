@@ -1,13 +1,13 @@
-Feature: Navbar tabs
+Feature: Tabs
 
-  Scenario Outline: Click through navbar items
-    Given the UI is loaded
+  Scenario Outline: Click through tabs
+    Given the site is reachable
       When I click <tab>
-      Then we are routed to <endpoint>
+      Then <tab> is set to active
   
     Examples: Tabs
-      | tab        | endpoint  |
-      | Bio        | /         |
-      | Projects   | /projects |
-      | Skills     | /skills   |
-      | Contact Me | /contact  |
+      | tab        |
+      | Bio        |
+      | Projects   |
+      | Skills     |
+      | Contact Me |
